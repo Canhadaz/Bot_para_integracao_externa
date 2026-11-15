@@ -61,11 +61,5 @@ class SlashComandos(commands.Cog):
       except requests.exceptions.RequestException as e:
          await interaction.followup.send(f'A API falhou: {e}', ephemeral=True)
 
-   #@app_commands.command(name = "conectar_repositorio", description = "conecta um repositório a um canal")
-   #@app_commands.describe(criador = "criador do repositório", repositorio = "nome do repositório")
-   #async def conectar(self, interaction: discord.Interaction, criador:str, repositorio: str)
-
-
-
 async def setup(bot):
    await bot.add_cog(SlashComandos(bot))
