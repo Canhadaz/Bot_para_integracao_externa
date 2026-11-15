@@ -96,7 +96,6 @@ projeto/
 
 ### BIBLIOTECAS UTILIZADAS
 
-```text
 * **`json`** — Nativa
 * **`asyncio`** — Nativa
 * **`os`** — Nativa
@@ -104,7 +103,6 @@ projeto/
 * **`discord`** — `pip install discord.py`
 * **`dotenv`** — `pip install python-dotenv`
 * **`apigithub`** — Módulo local (`apigithub.py`)
-```
 
 ---
 
