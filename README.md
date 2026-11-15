@@ -2,8 +2,8 @@
 *Bot do discord para consumir a API REST do Github*
 
 Desenvolvido por: 
- - ANONIMUBR
- - Canhadaz
+ - Gabriel Ferrarezi
+ - Murilo Furlanetto
 
 ---
 
