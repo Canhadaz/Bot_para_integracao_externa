@@ -4,6 +4,7 @@ import requests
 from discord import app_commands
 from discord.ext import commands
 
+# os comandos do but
 class SlashComandos(commands.Cog):
    def __init__(self, bot):
     self.bot = bot
@@ -21,12 +22,14 @@ class SlashComandos(commands.Cog):
 
    @app_commands.command(name="consultar_usuario", description="Consulta a usuário cadastrado no github")
    async def painel(self, interaction: discord.Interaction, usuario: str):
+      await interaction.response.defer(ephemeral = True) # a resposta só fica visivel pra quem usou o comando
+      
       try:
          api = apigithub.Api_github(usuario)
          resposta = api.requisicao_usuario()
 
          if not isinstance(resposta, dict):
-            await interaction.response.send_message(
+            await interaction.followup.send(
                   f"Usuário: {usuario} não encontrado! (Status: {resposta}).", 
                   ephemeral=True
             )
@@ -53,10 +56,10 @@ class SlashComandos(commands.Cog):
             inline=False
          )
 
-         await interaction.response.send_message(embed=embed, ephemeral=True)
+         await interaction.followup.send(embed=embed, ephemeral=True)
         
       except requests.exceptions.RequestException as e:
-         await interaction.response.send_message(f'A API falhou: {e}', ephemeral=True)
+         await interaction.followup.send(f'A API falhou: {e}', ephemeral=True)
 
 async def setup(bot):
    await bot.add_cog(SlashComandos(bot))

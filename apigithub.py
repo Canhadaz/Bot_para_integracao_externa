@@ -5,6 +5,7 @@ class Api_github():
    def __init__(self, usuario):
       self.usuario = usuario
 
+   # get no /users/{usuario}
    def requisicao_usuario(self):
       resposta = requests.get(
          f'https://api.github.com/users/{self.usuario}'
@@ -14,6 +15,7 @@ class Api_github():
       else:
          return resposta.status_code
 
+   # get no /users/{usuario}/repos
    def consulta_projetos(self, pagina=None):
       url = f'https://api.github.com/users/{self.usuario}/repos'
       
