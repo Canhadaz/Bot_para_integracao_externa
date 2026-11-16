@@ -13,7 +13,7 @@ class SlashComandos(commands.Cog):
    async def ping(self, interaction: discord.Interaction):
       latencia = round(self.bot.latency * 1000)
       
-      await interaction.response.send_message(f"Pong! 🏓 ({latencia}ms)")
+      await interaction.response.send_message(f"Pong! ({latencia}ms)")
 
    @app_commands.command(name="dizer", description="Faz o bot repetir o que você digitar.")
    @app_commands.describe(texto="O que você quer que o bot diga?")
